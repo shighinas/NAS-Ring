@@ -1,0 +1,14 @@
+.fixed-button {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+}
+mat-expansion-panel {
+  margin-top: 1rem;
+}
+
+@media (min-width: 1000px) {
+  mat-expansion-panel {
+    width: 60%;
+  }
+}

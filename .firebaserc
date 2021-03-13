@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "nasring-resd": {
+      "hosting": {
+        "res-frontend": [
+          "nasring-resd"
+        ]
+      }
+    }
+  }
+}

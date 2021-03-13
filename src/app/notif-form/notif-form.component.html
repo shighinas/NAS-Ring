@@ -1,0 +1,18 @@
+<mat-toolbar>Add Notification Message</mat-toolbar>
+<mat-card >
+    <form class="example-form" [formGroup]='message' (ngSubmit)='addNotif()'>
+      <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Heading</mat-label>
+        <input matInput autocomplete="off" formControlName='Heading' required>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Description</mat-label>
+        <textarea matInput autocomplete="off" formControlName='Description' required></textarea>
+        <!-- <mat-hint>Hint</mat-hint> -->
+      </mat-form-field>
+      <button mat-raised-button type="submit" color="primary" [disabled]='message.invalid' class="example-full-width"
+      [mat-dialog-close]= true >Add Notification</button>
+      <button mat-raised-button type="reset" color="warn" mat-dialog-close class="example-full-width">Close</button>
+    </form>
+
+</mat-card>

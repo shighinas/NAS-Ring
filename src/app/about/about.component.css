@@ -1,0 +1,15 @@
+.content {
+  background-image: url('/assets/girlOnRoad.png');
+  height: 100vh;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.para {
+  font-family: 'Slabo 27px', serif;;
+  max-width: 33rem;
+  font-size: 1.5rem;
+  line-height: 1;
+  padding: 3rem 3rem;
+  color: #161d6f;
+  background-color: rgba(240, 248, 255, .5);
+}

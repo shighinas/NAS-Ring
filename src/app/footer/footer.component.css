@@ -1,0 +1,27 @@
+footer {
+  background-color: #27253d;
+  padding: 50px 0 20px;
+  color: #fff;
+}
+.foot {
+  color: #EAF6F6;
+  font-size: 0.75rem;
+  padding: 30px 0;
+  text-align: center;
+}
+.social-icons {
+  margin: 30px 20px;
+  color: #fff;
+}
+h2 {
+  font-family: 'Hanalei', cursive;
+  font-size: 3rem;
+}
+#contact {
+  color: #fff;
+  background-color: #27253d;
+}
+.example-full-width {
+  width: 100%;
+  color: #fff;
+}

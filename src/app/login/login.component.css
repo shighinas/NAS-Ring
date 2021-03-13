@@ -1,0 +1,22 @@
+
+mat-grid-tile {
+  background-color: red;
+}
+mat-form-field, mat-card-content button {
+  width : 40vh;
+}
+
+.container {
+  background-color: #5eaaa8;
+  height: 100vh;
+}
+
+.sec {
+  background-color: rgb(252, 182, 53);
+  width : 40vw;
+  height: 83vh;
+}
+
+img {
+  width: 25vw;
+}

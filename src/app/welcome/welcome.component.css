@@ -1,0 +1,56 @@
+button {
+  margin-left: 1rem;
+  color: #fff;
+  font-size: larger;
+}
+button:hover {
+  background-color: #fff;
+  color: #161616;
+}
+.logo {
+  text-align: center;
+  background-color: #161616;
+}
+.logoImage {
+  width: 40%;
+}
+.belowLogo {
+  height: 3rem;
+  background-color: #323232;
+  padding: .7rem 0;
+  /* text-align: center; */
+}
+#pricing {
+  padding: 100px;
+  text-align: center;
+}
+
+.pricing-column {
+  padding: 3% 2%;
+}
+
+.feature {
+  /* background-color: #7da87b; */
+  background-image: url('/assets/girlOnRoad.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* height: 50vh; */
+}
+.welcome {
+  font-family: 'Slabo 27px', serif;;
+  max-width: 33rem;
+  font-size: 3rem;
+  line-height: 1;
+  padding: 3rem 3rem;
+  color: #161d6f;
+  background-color: aliceblue;
+}
+
+@media(max-width:799px) {
+  .logoImage {
+    width: 80%;
+  }
+  #pricing {
+    padding: 5%;
+  }
+}

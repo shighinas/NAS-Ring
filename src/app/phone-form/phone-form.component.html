@@ -1,0 +1,38 @@
+<mat-toolbar>Add new Contact</mat-toolbar>
+<mat-card >
+    <form class="example-form" [formGroup]='contactData' (ngSubmit)='addEvent()'>
+      <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>name</mat-label>
+        <input matInput autocomplete="off" formControlName='name' required>
+      </mat-form-field><br>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Group</mat-label>
+        <mat-select [(ngModel)]="toppings" name="group" [ngModelOptions]="{standalone: true}">
+          <mat-option *ngFor="let food of groupList" [value]="food">
+            {{food}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field><br>
+
+      <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Designation</mat-label>
+        <input matInput autocomplete="off" formControlName='Designation' required>
+      </mat-form-field><br>
+
+      <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Phone Number</mat-label>
+        <input matInput autocomplete="off" formControlName='phNo' required>
+      </mat-form-field><br>
+
+      <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>email address</mat-label>
+        <input matInput autocomplete="off" formControlName='email' required>
+      </mat-form-field><br>
+
+      <button mat-raised-button type="submit" color="primary" [disabled]='contactData.invalid' class="example-full-width"
+      [mat-dialog-close]= true >Add Details</button>
+      <button mat-raised-button type="reset" color="warn" mat-dialog-close class="example-full-width">Close</button>
+    </form>
+
+</mat-card>

@@ -1,0 +1,44 @@
+
+<div >
+  <mat-toolbar>Phone Directory</mat-toolbar>
+  <mat-accordion >
+
+    <mat-expansion-panel *ngFor= 'let con of contact' (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{con.Designation}}
+        </mat-panel-title>
+        <!-- <mat-panel-description>
+          {{con.phNo}}
+        </mat-panel-description> -->
+      </mat-expansion-panel-header>
+      <pre>
+        Name          : {{con.name}}
+        Phone Number  : {{con.phNo}}
+        email         : {{con.email}}
+      </pre>
+    </mat-expansion-panel>
+    <mat-expansion-panel *ngFor= 'let res of residents' (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{res.Owner}}
+        </mat-panel-title>
+        <!-- <mat-panel-description>
+          {{con.phNo}}
+        </mat-panel-description> -->
+      </mat-expansion-panel-header>
+      <pre>
+        Resident Member
+        Name          : {{res.Owner}}
+        Phone Number  : {{res.PnNo}}
+        email         : {{res.email}}
+      </pre>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+
+
+
+<button mat-fab class="fixed-button" *ngIf='_auth.isAdmin()' (click)="onCreate()"><mat-icon>add</mat-icon></button>

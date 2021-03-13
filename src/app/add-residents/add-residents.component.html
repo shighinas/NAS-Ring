@@ -1,0 +1,28 @@
+
+<div >
+  <mat-toolbar>Add Residents</mat-toolbar>
+  <mat-card >
+    <form class="example-form" [formGroup]='newResident' (ngSubmit)='addnewResident()'>
+      <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>House Number</mat-label>
+        <input matInput autocomplete="off" formControlName='HouseNo' required>
+        <mat-error>You must enter a value</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>House Owner Name</mat-label>
+        <input matInput autocomplete="off" formControlName='Owner' required>
+        <!-- <mat-icon matSuffix>account_circle</mat-icon> -->
+        <mat-error>You must enter a value</mat-error>
+        <!-- <mat-hint>Hint</mat-hint> -->
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Street Name</mat-label>
+        <input matInput autocomplete="off" formControlName='Street' required>
+        <mat-error>You must enter a value</mat-error>
+      </mat-form-field>
+      <button mat-raised-button type="submit" color="primary" [disabled]='newResident.invalid' [mat-dialog-close]=true>Add New Resident</button>
+      <button mat-raised-button type="reset" color="warn" mat-dialog-close>Close</button>
+    </form>
+
+  </mat-card>
+</div>

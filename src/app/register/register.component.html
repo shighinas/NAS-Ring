@@ -1,0 +1,83 @@
+<div fxLayoutAlign="space-around center" class="maindiv">
+  <mat-card fxLayout="row" fxLayoutAlign="space-between none" >
+    <div fxLayout="row" fxFlex="50%" fxHide.lt-lg>
+      <img src="assets/resd.jpg" alt="" style="height: 75vh;">
+    </div>
+    <div class="content"  >
+      <mat-horizontal-stepper linear #stepper fxLayout="column" fxFlex="0 1 auto">
+        <mat-step [stepControl]="firstFormGroup">
+          <form [formGroup]="firstFormGroup" (ngSubmit)="check()">
+            <ng-template matStepLabel>Fill out your name</ng-template>
+            <mat-form-field appearance='outline' fxFill>
+              <mat-label>House Number</mat-label>
+              <input matInput formControlName="HNo" placeholder="Last name, First name" required>
+            </mat-form-field>
+            <mat-form-field appearance='outline' fxFill>
+              <mat-label>House Owner Name</mat-label>
+              <input matInput formControlName="Howner" placeholder="Last name, First name" required>
+            </mat-form-field>
+            <mat-form-field appearance='outline' fxFill>
+              <mat-label>Street</mat-label>
+              <input matInput formControlName="Hstreet" placeholder="Last name, First name" required>
+            </mat-form-field>
+            <div>
+              <button mat-raised-button matStepperNext color="primary" [disabled]='firstFormGroup.invalid'>Next</button>
+            </div>
+          </form>
+        </mat-step>
+
+        <mat-step [stepControl]="secondFormGroup">
+          <form [formGroup]="secondFormGroup" *ngIf="checkResponse" (ngSubmit)="register()">
+            <ng-template matStepLabel>details</ng-template>
+            <mat-form-field appearance='outline' fxFill>
+              <mat-label>Number of Members in Family</mat-label>
+              <input matInput formControlName="NoMembers" placeholder="0-100" required>
+            </mat-form-field>
+            <mat-form-field appearance='outline' fxFill>
+              <mat-label>Mobile number</mat-label>
+              <input matInput type="tel" formControlName="PnNo" placeholder="5555551234" required>
+            </mat-form-field>
+            <mat-form-field appearance='outline' fxFill>
+              <mat-label>Email Id</mat-label>
+              <input matInput formControlName="email" placeholder="abc@abc.com" required>
+              <mat-error>email not valid</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance='outline' fxFill>
+              <mat-label>Password</mat-label>
+              <input formControlName="Password" matInput [type]="hide ? 'password' : 'text'">
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+
+            </mat-form-field>
+            <!-- <mat-form-field appearance='outline' fxFill>
+              <mat-label>Confirm Password</mat-label>
+              <input matInput formControlName="confPass" placeholder="Last name, First name" required>
+            </mat-form-field> -->
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button matStepperNext type="submit">Next</button>
+            </div>
+          </form>
+
+          <div *ngIf="!checkResponse">
+            <ng-template matStepLabel>Wait</ng-template>
+            <p>Your request has been successfully recorded</p>
+            <p>Wait for admin Approval.</p>
+            <p>You can continue to register after 24 hours.</p>
+            <button mat-raised-button [routerLink] = "['/']" color="warn">Back To Welcome Screen</button>
+          </div>
+
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Done</ng-template>
+          <p>You are now done.</p>
+          <div>
+            <button mat-button matStepperPrevious [routerLink] = "['/login']">Log In Now</button>
+            <button mat-button [routerLink] = "['/']">I will login later</button>
+          </div>
+        </mat-step>
+      </mat-horizontal-stepper>
+    </div>
+  </mat-card>
+</div>

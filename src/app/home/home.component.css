@@ -1,0 +1,34 @@
+.example-container {
+  width: 100%;
+  min-height: 100vh;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  width: 100vw;
+  /* align-items: center;
+  justify-content: center; */
+}
+
+.example-sidenav {
+  width:fit-content;
+  padding: .5rem .5rem .5rem 1rem ;
+  background-color: bisque;
+}
+.menu {
+  height: min-content;
+}
+.sendButton {
+  color: black;
+}
+.example-card {
+  margin: .5rem 0;
+  box-shadow: 1px 1px 5px black;
+  max-width: 17rem;
+}
+.content {
+  width: 80vw;
+  overflow-x: hidden;
+}

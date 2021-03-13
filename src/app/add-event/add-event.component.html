@@ -1,0 +1,36 @@
+<div >
+  <mat-toolbar>Add event</mat-toolbar>
+  <mat-card >
+    <form class="example-form" [formGroup]='newEvent' (ngSubmit)='addEvent()'>
+      <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Name of the event</mat-label>
+        <input matInput autocomplete="off" formControlName='name' required>
+      </mat-form-field><br><br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Status of the event</mat-label>
+        <mat-select [(ngModel)]="toppings" name="status" [ngModelOptions]="{standalone: true}">
+          <mat-option *ngFor="let food of statusList" [value]="food">
+            {{food}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Date</mat-label>
+        <input type="date" matInput autocomplete="off" formControlName='date' required>
+      </mat-form-field><br>
+      <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Description</mat-label>
+        <input matInput autocomplete="off" formControlName='description' required>
+      </mat-form-field><br>
+      <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Image URL</mat-label>
+        <input type="url" matInput autocomplete="off" formControlName='imgURL' required>
+      </mat-form-field><br>
+      <button mat-raised-button type="submit" color="primary" [disabled]='newEvent.invalid' [mat-dialog-close]= true>Add New Event</button>
+      <button mat-raised-button type="reset" color="warn" mat-dialog-close>Close</button>
+    </form>
+
+  </mat-card>
+</div>
